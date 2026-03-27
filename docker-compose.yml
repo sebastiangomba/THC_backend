@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: psql_dev
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: thc_db_dev
+      POSTGRES_USER: thc_admin_dev
+      POSTGRES_PASSWORD: thcdb2026dev
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data_dev:/var/lib/postgresql/data
+
+volumes:
+  postgres_data_dev:
